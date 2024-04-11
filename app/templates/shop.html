@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content%}
+ 
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      Hello there {{ current_user.username }}, below are your Real Estate properties:
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-3 m-2">
+    <img src="{{url_for('static', filename='images/RealEstateProperty1 (2).jpg')}}">
+  </div>
+  <div class="col-md-3 m-2">
+    <img src="{{url_for('static', filename='images/RealEstateProperty2.jpg')}}">
+  </div>
+  <div class="row">
+    <div class="col-md-3 m-2">
+    <img src="{{url_for('static', filename='images/RealEstateProperty3.jpg')}}">
+  </div>
+  <div class="col-md-3 m-2">
+    <img src="{{url_for('static', filename='images/RealEstateProperty4.jpg')}}" >
+  </div>
+  </div>
+  
+  
+  </div>
+
+  {% endblock %}
