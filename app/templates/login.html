@@ -4,46 +4,67 @@
     <div class="col-md-4">
         <!-- Empty Column -->
     </div>
-    <div class="col-md-4">
-        <form action="" method="post" novalidate>
-            {{ form.hidden_tag() }}
-            <p>
-                {{ form.username.label }} <br>
-                {{ form.username(size=32)}}<br>
-                {% for error in form.username.errors %}
-                <span style="color: red;">
-                    {{ error }}
-                </span>
-                {% endfor %}
 
-            </p>
-         
-            <p>
-                {{ form.password.label }} <br>
-                {{ form.password(size=32)}}<br>
-                {% for error in form.password.errors %}
-                <span style="color: red;">
-                    {{ error }}
-                </span>
-                {% endfor %}
+    
+    <div class="col-md-4 container1" >
+        <h3 style="text-align: center;">Login</h3>
+        <div>
+            <img src="{{url_for('static', filename='images/profile_avatar.png')}}"/>
+        </div>
+        <div >
+            <h5 style="color: purple;">Profile</h5>
+        </div>
+        
+        <div class="col-md-4">
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.username.label }} <br>
+                    {{ form.username(size=32)}}<br>
+                    {% for error in form.username.errors %}
+                    <span style="color: red;">
+                        {{ error }}
+                    </span>
+                    {% endfor %}
+    
+                </p>
+             
+                <p>
+                    {{ form.password.label }} <br>
+                    {{ form.password(size=32)}}<br>
+                    {% for error in form.password.errors %}
+                    <span style="color: red;">
+                        {{ error }}
+                    </span>
+                    {% endfor %}
+                    
+                </p>
+             
+                <p>
+                  <p> New Here? <a href="{{ url_for ('register') }}">Register Now</a></p> 
+                </p>
+                <p>
+                    {{ form.remember_me() }} {{ form.remember_me.label}}            
+                </p>
+                 <p>
+                  
+                   
+                    
+                </p>
+             
                 
-            </p>
-         
-            <p>
-              <p> New Here? <a href="{{ url_for ('register') }}">Register Now</a></p> 
-            </p>
-            <p>
-                {{ form.remember_me() }} {{ form.remember_me.label}}            
-            </p>
-            
-            <p>
-                {{ form.submit() }}
-            </p>
-        </form>
-          
+                <p>
+                    {{ form.submit() }}
+                </p>
+            </form>
+              
+        </div>
+        <div class="col-md-4">
+            <!-- Empty Column -->
+        </div>
     </div>
-    <div class="col-md-4">
-        <!-- Empty Column -->
+    {% endblock %} 
+
     </div>
-</div>
-{% endblock %} 
+
+    

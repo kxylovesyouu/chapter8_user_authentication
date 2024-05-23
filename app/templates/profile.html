@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content%}
+ 
+
+  <div class="row">
+    <div class="col-md-5 text center">
+     
+      <p>
+       <img src="{{user.avatar(120)}}" alt="User Avatar">
+      </p>
+     </div>
+     <div class="col-md-7">
+      <p>
+        <strong>Username:</strong> {{user.username}}
+      </p>
+      <p>
+        <strong>Email:</strong> {{user.email}}
+      </p>
+      {%if user.last_seen%}
+      <p>
+        <strong>Last Seen:</strong> {{ user.last_seen}}
+      </p>
+      {%endif%}
+      {% if user. about_me%}
+      <p>
+        <strong>About Me:</strong> {{user.about_me}}
+      </p>
+      {%endif%}
+      <p>
+        <a href="{{ url_for ('edit_profile') }}">Edit Your Profile Now  </a>
+      </p>
+      
+     
+     </div>
+  </div>
+  <hr>
+
+<div class="row">
+  <div class="col-md-12">
+    <p> Hi There {{ current_user.username}}. Make A Post Now</p>
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+     
+      <p>
+        {{ form.body.label }} <br>
+        {{ form.body (cols=70, rows=4) }}<br>
+        {% for error in form.body.errors %}
+        <span style="color: red;">
+            {{ error }}
+        </span>
+        {% endfor %}
+  
+    </p>
+    
+   
+   
+      
+      <p>
+          {{ form.submit() }}
+      </p>
+  
+  
+</div>
+
+
+
+  {% endblock %}
